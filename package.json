@@ -9,14 +9,25 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@chakra-ui/icons": "^2.0.8",
+    "@chakra-ui/react": "^2.2.8",
+    "@emotion/react": "^11",
+    "@emotion/styled": "^11",
+    "colorthief": "^2.3.2",
+    "framer-motion": "^6",
+    "get-pixels": "^3.3.3",
     "next": "12.2.5",
+    "next-images": "^1.8.4",
+    "quantize": "^1.2.0",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-image-gallery": "^1.2.9"
   },
   "devDependencies": {
     "@types/node": "18.7.5",
     "@types/react": "18.0.17",
     "@types/react-dom": "18.0.6",
+    "@types/react-image-gallery": "^1.0.5",
     "eslint": "8.22.0",
     "eslint-config-next": "12.2.5",
     "typescript": "4.7.4"

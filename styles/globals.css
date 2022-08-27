@@ -1,3 +1,5 @@
+@import "~react-image-gallery/styles/css/image-gallery.css";
+
 html,
 body {
   padding: 0;
@@ -23,4 +25,19 @@ a {
     color: white;
     background: black;
   }
+}
+
+/* declare font Gotham */
+@font-face {
+  font-family: "Gotham";
+  src: url("../lib/fonts/GothamMedium.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Gotham";
+  src: url("../lib/fonts/GothamBlack.otf");
+  font-weight: bold;
+  font-style: normal;
 }
