@@ -1,16 +1,5 @@
-import {
-  Box,
-  Button,
-  Container,
-  Heading,
-  HStack,
-  Image,
-  SimpleGrid,
-  Text,
-  VStack,
-} from "@chakra-ui/react";
+import { Box, Heading, Image } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
-import ImageGallery from "react-image-gallery";
 
 const images = [0, 1, 2, 3, 4, 5].map((number) => ({
   original: `/gallery/${number}.jpg`,
