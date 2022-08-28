@@ -1,9 +1,9 @@
+import { HamburgerIcon } from "@chakra-ui/icons";
 import {
   Box,
   Button,
   CloseButton,
   Flex,
-  Heading,
   HStack,
   IconButton,
   useColorModeValue,
@@ -24,7 +24,7 @@ export const NavBar = () => {
   const bg = useColorModeValue("white", "gray.800");
   const mobileNav = useDisclosure();
   return (
-    <Box bg={bg} w="full" px={36} py={4} shadow="md">
+    <Box bg={bg} w="full" px={36} py={4}>
       <Flex alignItems="center" justifyContent="space-between" mx="auto">
         <Flex>
           <Box title="Choc Home Page" display="flex" alignItems="center">
@@ -73,7 +73,8 @@ export const NavBar = () => {
               _dark={{
                 color: "inherit",
               }}
-              variant="ghost"
+              icon={<HamburgerIcon />}
+              variant="solid"
               onClick={mobileNav.onOpen}
             />
 

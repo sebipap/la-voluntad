@@ -26,6 +26,14 @@ a {
 }
 
 /* declare font Gotham */
+
+@font-face {
+  font-family: "Gotham";
+  src: url("../lib/fonts/GothamLight.ttf");
+  font-weight: lighter;
+  font-style: normal;
+}
+
 @font-face {
   font-family: "Gotham";
   src: url("../lib/fonts/GothamMedium.ttf");
@@ -35,7 +43,14 @@ a {
 
 @font-face {
   font-family: "Gotham";
-  src: url("../lib/fonts/GothamBlack.otf");
+  src: url("../lib/fonts/GothamBold.ttf");
   font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Gotham";
+  src: url("../lib/fonts/GothamBlack.otf");
+  font-weight: bolder;
   font-style: normal;
 }

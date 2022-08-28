@@ -1,4 +1,4 @@
-import { Box, Heading, Image } from "@chakra-ui/react";
+import { Box, Image } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 
 const images = [0, 1, 2, 3, 4, 5].map((number) => ({
@@ -33,16 +33,8 @@ const Gallery = () => {
         fit="cover"
         placeholder="blur"
         alt=""
+        borderRadius={"md"}
       />
-      <Heading
-        position={"absolute"}
-        color={"white"}
-        textShadow={"dark-lg"}
-        top={"100px"}
-        left={"100px"}
-      >
-        LA VOLUNTAD
-      </Heading>
     </Box>
   );
 };
