@@ -74,7 +74,7 @@ export const NavBar = () => {
                 color: "inherit",
               }}
               icon={<HamburgerIcon />}
-              variant="solid"
+              variant="ghost"
               onClick={mobileNav.onOpen}
             />
 
