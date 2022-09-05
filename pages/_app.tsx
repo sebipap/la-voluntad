@@ -4,6 +4,7 @@ import { NavBar } from "./api/_navbar";
 
 import "../styles/globals.css";
 import { chakraTheme } from "../styles/chakraTheme";
+import Footer from "../components/Footer";
 
 function MyApp({ Component, pageProps }: any) {
   const router = useRouter();
@@ -22,6 +23,7 @@ function MyApp({ Component, pageProps }: any) {
       >
         <Component {...pageProps} />
       </VStack>
+      <Footer />
     </ChakraProvider>
   );
 }

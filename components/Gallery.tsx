@@ -24,7 +24,6 @@ const Gallery = () => {
   }, [counter]);
 
   return (
-    // image gallery
     <Box w={"100%"} h={"600px"}>
       <Image
         src={images[counter]?.original}

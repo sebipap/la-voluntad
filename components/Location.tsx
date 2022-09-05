@@ -1,19 +1,20 @@
 import { TimeIcon } from "@chakra-ui/icons";
 import {
   Box,
-  Flex,
   Heading,
   HStack,
   Image,
   SimpleGrid,
-  Tab,
-  TabList,
-  TabPanel,
-  TabPanels,
-  Tabs,
   Text,
   VStack,
 } from "@chakra-ui/react";
+import PedidosYaButton from "./Delivery";
+
+export const LA_VOLUNTAD_DEL_ALTO_PEDIDOSYA_URL =
+  "https://www.pedidosya.com.ar/restaurantes/san-isidro/la-voluntad-cafeteria-menu";
+
+export const LA_VOLUNTAD_DEL_BAJO_PEDIDOSYA_URL =
+  "https://www.pedidosya.com.ar/restaurantes/san-isidro/la-voluntad-resto-menu";
 
 const LOCATIONS = [
   {
@@ -23,6 +24,7 @@ const LOCATIONS = [
     schedule: "Martes a Domingos de 8:00 a 20:00",
     address: "Primera Junta 1002, San Isidro, Buenos Aires",
     image: "/locations-delbajo.jpeg",
+    pedidosYaUrl: LA_VOLUNTAD_DEL_BAJO_PEDIDOSYA_URL,
   },
   {
     name: "Del Alto",
@@ -31,6 +33,7 @@ const LOCATIONS = [
     schedule: "Martes a Domingos de 8:00 a 20:00",
     address: "9 de Julio 932, San Isidro, Buenos Aires",
     image: "/locations-delalto.jpeg",
+    pedidosYaUrl: LA_VOLUNTAD_DEL_ALTO_PEDIDOSYA_URL,
   },
   {
     name: "Predio La Rural",
@@ -41,63 +44,55 @@ const LOCATIONS = [
     image: "/locations-larural.jpeg",
   },
 ];
-const LocationOld = () => {
+
+type Location = {
+  name: string;
+  address: string;
+  schedule: string;
+  image: string;
+  pedidosYaUrl: string;
+};
+
+type Props = Partial<Location>;
+
+const Location = ({ name, address, schedule, image, pedidosYaUrl }: Props) => {
   return (
-    <Box p={"16px"} width={"100%"}>
-      <Heading size={"lg"} mb={"20px"}>
-        Ubicación
-      </Heading>
+    <VStack key={name}>
+      {pedidosYaUrl && (
+        <Box marginBottom={"-40px"} zIndex={"2"} marginLeft={"300px"}>
+          <PedidosYaButton url={pedidosYaUrl} />
+        </Box>
+      )}
+      <Image
+        borderRadius="md"
+        src={image}
+        w={"100%"}
+        h={"300px"}
+        fit="cover"
+        alt={""}
+      ></Image>
 
-      <Tabs isFitted>
-        <TabList>
-          {LOCATIONS.map(({ name }) => (
-            <Tab key={name}>{name}</Tab>
-          ))}
-        </TabList>
-
-        <TabPanels>
-          {LOCATIONS.map(({ name, googleMapsUrl, address, schedule }) => (
-            <TabPanel key={name}>
-              <HStack
-                p={"10px"}
-                borderWidth="1px"
-                my={"10px"}
-                borderRadius={"5px"}
-              >
-                <TimeIcon />
-                <Text>{schedule}</Text>
-              </HStack>
-              <Box
-                borderWidth="1px"
-                my={"10px"}
-                borderRadius={"5px"}
-                bg={"#f1f3f4"}
-              >
-                <Text m={"20px"} fontWeight={500}>
-                  {address}
-                </Text>
-                <iframe
-                  src={googleMapsUrl}
-                  style={{ border: 0 }}
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  width={"100%"}
-                  height={"500px"}
-                ></iframe>
-              </Box>
-            </TabPanel>
-          ))}
-        </TabPanels>
-      </Tabs>
-    </Box>
+      <VStack spacing={"16px"}>
+        <Text mt={2} fontSize="xl" fontWeight="semibold" lineHeight="short">
+          LV {name}
+        </Text>
+        <Text ml={1} fontSize="sm">
+          <b>{address}</b>
+        </Text>
+        <HStack>
+          <TimeIcon />
+          <Text>{schedule}</Text>
+        </HStack>
+      </VStack>
+    </VStack>
   );
 };
 
-const Location = () => {
+const Locations = () => {
   return (
     <Box p={"16px"} width={"100%"}>
       <Heading size={"lg"} mb={"60px"} textAlign={"center"}>
-        Locales
+        LOCALES
       </Heading>
 
       <SimpleGrid
@@ -107,38 +102,12 @@ const Location = () => {
         }}
         spacing={"50px"}
       >
-        {LOCATIONS.map(({ name, address, googleMapsUrl, schedule, image }) => (
-          <VStack key={name}>
-            <Image
-              borderRadius="md"
-              src={image}
-              w={"100%"}
-              h={"300px"}
-              fit="cover"
-            />
-
-            <VStack spacing={"16px"}>
-              <Text
-                mt={2}
-                fontSize="xl"
-                fontWeight="semibold"
-                lineHeight="short"
-              >
-                LV {name}
-              </Text>
-              <Text ml={1} fontSize="sm">
-                <b>{address}</b>
-              </Text>
-              <HStack>
-                <TimeIcon />
-                <Text>{schedule}</Text>
-              </HStack>
-            </VStack>
-          </VStack>
+        {LOCATIONS.map((location) => (
+          <Location {...location} key={location.name} />
         ))}
       </SimpleGrid>
     </Box>
   );
 };
 
-export default Location;
+export default Locations;

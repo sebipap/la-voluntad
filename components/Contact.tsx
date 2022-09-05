@@ -1,14 +1,13 @@
-import { Box, Heading, Text, Link } from "@chakra-ui/react";
-import NextLink from "next/link";
+import { Box, Heading, Text, Link, Divider } from "@chakra-ui/react";
 
-const whatsappLink =
+export const LA_VOLUNTAD_WHATSAPP_URL =
   "https://api.whatsapp.com/send/?phone=%2B5491130834799&text&type=phone_number&app_absent=0";
 
 const Contact = () => {
   return (
     <Box p={"16px"} width={"100%"}>
       <Heading size={"lg"} mb={"60px"} textAlign={"center"}>
-        Contacto
+        CONTACTO
       </Heading>
       <Box
         borderRadius={"10px"}
@@ -24,11 +23,16 @@ const Contact = () => {
         <Text>
           {" "}
           Contactate con nosotros haciendo click{" "}
-          <Link color="teal.500" href={whatsappLink} target="_blank">
+          <Link
+            color="teal.500"
+            href={LA_VOLUNTAD_WHATSAPP_URL}
+            target="_blank"
+          >
             acá.
           </Link>
         </Text>
       </Box>
+      <Divider />
     </Box>
   );
 };

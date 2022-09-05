@@ -1,8 +1,10 @@
 import { Heading } from "@chakra-ui/react";
 import type { NextPage } from "next";
 import Contact from "../components/Contact";
+import Delivery from "../components/Delivery";
+import Footer from "../components/Footer";
 import Gallery from "../components/Gallery";
-import Location from "../components/Location";
+import Locations from "../components/Location";
 import { Logo } from "../components/Logo";
 
 const Home: NextPage = () => {
@@ -10,7 +12,7 @@ const Home: NextPage = () => {
     <>
       <Logo />
       <Gallery />
-      <Location />
+      <Locations />
       <Contact />
     </>
   );
