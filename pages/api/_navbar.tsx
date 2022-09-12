@@ -51,10 +51,10 @@ export const NavBar = () => {
               spacing={1}
               mr={1}
               color="brand.500"
-              display={{
-                base: "none",
-                md: "inline-flex",
-              }}
+              // display={{
+              //   base: "none",
+              //   md: "inline-flex",
+              // }}
             >
               {PAGES.map(({ name, linkTo }) => (
                 <Button variant="ghost" key={name}>
@@ -63,7 +63,7 @@ export const NavBar = () => {
               ))}
             </HStack>
 
-            <Box
+            {/* <Box
               display={{
                 base: "inline-flex",
                 md: "none",
@@ -117,7 +117,7 @@ export const NavBar = () => {
                   </Button>
                 ))}
               </VStack>
-            </Box>
+            </Box> */}
           </HStack>
         </Flex>
       </Flex>
