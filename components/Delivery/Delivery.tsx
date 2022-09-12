@@ -53,7 +53,7 @@ export const Delivery = () => {
             <SimpleGrid columns={{ sm: 1, md: 2 }} spacing={20}>
               {LOCATIONS.filter((location) => location.pedidosYaUrl).map(
                 (location) => (
-                  <Link href={location.pedidosYaUrl} key={location.name}>
+                  <Link href={location.pedidosYaUrl || ""} key={location.name}>
                     <Button h={"550px"} variant="outline">
                       <VStack>
                         <Location
