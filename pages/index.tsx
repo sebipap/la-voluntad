@@ -1,17 +1,18 @@
-import { Heading } from "@chakra-ui/react";
+import { Box, Button, Heading, SimpleGrid, Text } from "@chakra-ui/react";
 import type { NextPage } from "next";
 import Contact from "../components/Contact";
-import Delivery from "../components/Delivery";
+import { Delivery } from "../components/Delivery/Delivery";
 import Footer from "../components/Footer";
 import Gallery from "../components/Gallery";
 import Locations from "../components/Location";
-import { Logo } from "../components/Logo";
+import { Logo } from "../components/Logo/Logo";
 
 const Home: NextPage = () => {
   return (
     <>
       <Logo />
       <Gallery />
+      <Delivery />
       <Locations />
       <Contact />
     </>

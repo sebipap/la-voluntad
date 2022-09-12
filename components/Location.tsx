@@ -8,7 +8,7 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react";
-import PedidosYaButton from "./Delivery";
+import PedidosYaButton from "./PedidosYaButton";
 
 export const LA_VOLUNTAD_DEL_ALTO_PEDIDOSYA_URL =
   "https://www.pedidosya.com.ar/restaurantes/san-isidro/la-voluntad-cafeteria-menu";
@@ -16,7 +16,7 @@ export const LA_VOLUNTAD_DEL_ALTO_PEDIDOSYA_URL =
 export const LA_VOLUNTAD_DEL_BAJO_PEDIDOSYA_URL =
   "https://www.pedidosya.com.ar/restaurantes/san-isidro/la-voluntad-resto-menu";
 
-const LOCATIONS = [
+export const LOCATIONS = [
   {
     name: "Del Bajo",
     googleMapsUrl:
@@ -51,14 +51,22 @@ type Location = {
   schedule: string;
   image: string;
   pedidosYaUrl: string;
+  withPedidosYaButton?: boolean;
 };
 
 type Props = Partial<Location>;
 
-const Location = ({ name, address, schedule, image, pedidosYaUrl }: Props) => {
+export const Location = ({
+  name,
+  address,
+  schedule,
+  image,
+  pedidosYaUrl,
+  withPedidosYaButton = true,
+}: Props) => {
   return (
     <VStack key={name}>
-      {pedidosYaUrl && (
+      {pedidosYaUrl && withPedidosYaButton && (
         <Box marginBottom={"-40px"} zIndex={"2"} marginLeft={"300px"}>
           <PedidosYaButton url={pedidosYaUrl} />
         </Box>

@@ -3,7 +3,7 @@ import { Heading } from "@chakra-ui/react";
 const Menu = () => {
   return (
     <>
-      <Heading>Menu</Heading>
+      <Heading size={"lg"}>MENU</Heading>
       <iframe
         src="https://www.monline.com.ar/LaVoluntad"
         width={"100%"}

@@ -32,7 +32,7 @@ const Gallery = () => {
         fit="cover"
         placeholder="blur"
         alt=""
-        borderRadius={"md"}
+        borderRadius={"2xl"}
       />
     </Box>
   );
