@@ -100,6 +100,4 @@ export const Announcement = ({ title, body, imageUrl, imageSide }: Props) => (
 //           alt="alfajor"
 //         />
 //       </Box>
-//     </SimpleGrid>
-//   );
-// };
+//     </SimpleGr
